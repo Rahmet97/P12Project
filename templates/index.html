@@ -101,18 +101,20 @@
       <p class="long_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
       <div class="product_section_2">
         <div class="row">
+            {% for product in products %}
           <div class="col-md-6">
-            <div class="image_2"><img src="{% static 'images/img-3.png' %}"></div>
-            <div class="price_text">Price $ <span style="color: #3a3a38;">200</span></div>
-            <h1 class="game_text">Video Game</h1>
-            <p class="long_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+            <div class="image_2"><img src="{{ product.image.url }}"></div>
+            <div class="price_text">Price $ <span style="color: #3a3a38;">{{ product.price }}</span></div>
+            <h1 class="game_text">{{ product.title }}</h1>
+            <p class="long_text">{{ product.description }}</p>
           </div>
-          <div class="col-md-6">
-            <div class="image_2"><img src="{% static 'images/img-3.png' %}"></div>
-            <div class="price_text">Price $ <span style="color: #3a3a38;">300</span></div>
-            <h1 class="game_text">Video Game</h1>
-            <p class="long_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-          </div>
+            {% endfor %}
+{#          <div class="col-md-6">#}
+{#            <div class="image_2"><img src="{% static 'images/img-3.png' %}"></div>#}
+{#            <div class="price_text">Price $ <span style="color: #3a3a38;">300</span></div>#}
+{#            <h1 class="game_text">Video Game</h1>#}
+{#            <p class="long_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>#}
+{#          </div>#}
         </div>
       </div>
       <div class="see_main">
