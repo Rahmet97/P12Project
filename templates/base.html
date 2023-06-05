@@ -48,12 +48,18 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#"><img src="{% static 'images/search-icon.png' %}"></a>
                 </li>
+                  {% if user.is_authenticated %}
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">SIGN IN</a>
+                  <a class="nav-link" href="/accounts/logout">SIGN OUT</a>
+                </li>
+                  {% else %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="/accounts/login">SIGN IN</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">REGISTER</a>
+                  <a class="nav-link" href="/accounts/register">REGISTER</a>
                 </li>
+                  {% endif %}
               </ul>
             </div>
         </nav>
