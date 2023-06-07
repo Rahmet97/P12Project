@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 
+from .forms import CommentForm
 from .models import Product, Comment
 
 
@@ -10,26 +11,30 @@ from .models import Product, Comment
 class HomeView(View):
 
     def get(self, request):
+        form = CommentForm()
         products = Product.objects.all()
         comments = Comment.objects.all()
         return render(request, 'index.html', {
             'products': products,
-            'comments': comments
+            'comments': comments,
+            'form': form
         })
 
     def post(self, request):
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get('name')
+            email = form.cleaned_data.get('email')
+            phone = form.cleaned_data.get('phone')
+            message = form.cleaned_data.get('message')
 
-        comment = Comment.objects.create(
-            name=name,
-            email=email,
-            phone=phone,
-            message=message
-        )
-        comment.save()
+            comment = Comment.objects.create(
+                name=name,
+                email=email,
+                phone=phone,
+                message=message
+            )
+            comment.save()
         return redirect('/')
 
 
