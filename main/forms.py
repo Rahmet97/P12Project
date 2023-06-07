@@ -10,7 +10,7 @@ from django.forms import (
 
 
 class CommentForm(Form):
-    name = CharField(widget=TextInput(attrs={
+    name = CharField(label='Name', widget=TextInput(attrs={
         'placeholder': 'Name',
         'class': 'email-bt'
     }))

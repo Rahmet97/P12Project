@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.core.mail import send_mail
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import CommentForm
 from .models import Product, Comment
@@ -44,3 +46,31 @@ def about(request):
 
 def product(request):
     return render(request, 'product.html')
+
+
+class Contact(LoginRequiredMixin, View):
+    def get(self,request):
+        return render(request, 'contact.html')
+
+    def post(self, request):
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+
+        msg = f'''
+{message}
+
+Full name: {name}
+email: {email}
+phone number: {phone}
+                    '''
+
+        send_mail(
+            'Yangi habar',
+            msg,
+            name,
+            ['rahmetruslanov6797@gmail.com'],
+            fail_silently=True
+        )
+        return redirect('contact')

@@ -43,12 +43,15 @@
                   <a class="nav-link" href="remot.html">REMOT CONTROL</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">CONTACT US</a>
+                  <a class="nav-link" href="contact">CONTACT US</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#"><img src="{% static 'images/search-icon.png' %}"></a>
                 </li>
                   {% if user.is_authenticated %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="">{{ user.first_name }} {{ user.last_name }}</a>
+                </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="/accounts/logout">SIGN OUT</a>
                 </li>
