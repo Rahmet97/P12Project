@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -37,10 +38,10 @@
                   <a class="nav-link" href="/product">OUR PRODUCTS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="video.html">VIDEO GAMES</a>
+                  <a class="nav-link" href="/video">VIDEO GAMES</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="remot.html">REMOT CONTROL</a>
+                  <a class="nav-link" href="/remote">REMOT CONTROL</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact">CONTACT US</a>
@@ -63,6 +64,22 @@
                   <a class="nav-link" href="/accounts/register">REGISTER</a>
                 </li>
                   {% endif %}
+                <li class="nav-item">
+                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <select name="language">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Go">
+                    </form>
+                </li>
               </ul>
             </div>
         </nav>

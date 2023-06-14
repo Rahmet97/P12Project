@@ -5,6 +5,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import CommentForm
 from .models import Product, Comment
+from django.db.models import Q
+from datetime import datetime, timedelta
+from django.utils import translation
 
 
 # def home(request):
@@ -45,7 +48,14 @@ def about(request):
 
 
 def product(request):
-    return render(request, 'product.html')
+    products = Product.objects.all()
+    return render(request, 'product.html', {'products': products})
+
+def remote(request):
+    return render(request, 'remot.html')
+
+def video(request):
+    return render(request, 'video.html')
 
 
 class Contact(LoginRequiredMixin, View):
@@ -74,3 +84,16 @@ phone number: {phone}
             fail_silently=True
         )
         return redirect('contact')
+
+
+class ProductDetail(View):
+
+    def get(self, request, pk):
+        product = Product.objects.get(pk=pk)
+        return render(request, 'product-detail.html', {'product': product})
+
+
+def set_language(request):
+    language_code = request.POST.get('language_code')
+    translation.activate(language_code)
+    return redirect('/')
