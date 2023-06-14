@@ -83,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'p12_project_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': 'gamepad_admin',
+        'PASSWORD': 'ab1234cd',
         'HOST': 'localhost',
         'PORT': 5432
     }
