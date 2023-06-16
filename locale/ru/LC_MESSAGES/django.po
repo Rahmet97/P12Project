@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-13 19:06+0500\n"
+"POT-Creation-Date: 2023-06-16 21:01+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,110 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: main/apps.py:8
+msgid "main"
+msgstr "основное"
+
+#: main/models.py:6 main/models.py:33
+msgid "name"
+msgstr "название"
+
+#: main/models.py:9
+msgid "Category"
+msgstr "Категория"
+
+#: main/models.py:10
+msgid "Categories"
+msgstr "Категории"
+
+#: main/models.py:17
+msgid "title"
+msgstr "заглавие"
+
+#: main/models.py:18
+msgid "price"
+msgstr "цена"
+
+#: main/models.py:19
+msgid "category"
+msgstr "категория"
+
+#: main/models.py:20
+msgid "image"
+msgstr "изображение"
+
+#: main/models.py:21
+msgid "description"
+msgstr "описание"
+
+#: main/models.py:22
+msgid "date"
+msgstr "дата"
+
+#: main/models.py:28
+msgid "Product"
+msgstr "Продукт"
+
+#: main/models.py:29
+msgid "Products"
+msgstr "Продукты"
+
+#: main/models.py:34
+msgid "email"
+msgstr "электонная почта"
+
+#: main/models.py:35
+msgid "phone"
+msgstr "номер телефона"
+
+#: main/models.py:36
+msgid "message"
+msgstr "сообщение"
+
+#: main/models.py:42
+msgid "Comment"
+msgstr "Коментарий"
+
+#: main/models.py:43
+msgid "Comments"
+msgstr "Коментарии"
+
+#: templates/base.html:32
+msgid "HOME"
+msgstr "ГЛАВНАЯ"
+
+#: templates/base.html:35
+msgid "ABOUT"
+msgstr "О НАС"
+
+#: templates/base.html:38
+msgid "OUR PRODUCTS"
+msgstr "НАШИ ПРОДУКТЫ"
+
+#: templates/base.html:41
+msgid "VIDEO GAMES"
+msgstr "ВИДЕО ИГРЫ"
+
+#: templates/base.html:44
+msgid "REMOTE CONTROL"
+msgstr "УДАЛЕННЫЙ КОНТРОЛЬ"
+
+#: templates/base.html:47
+msgid "CONTACT US"
+msgstr "СВЯЗЬ"
+
+#: templates/base.html:57
+msgid "SIGN OUT"
+msgstr "ВЫЙТИ"
+
+#: templates/base.html:61
+msgid "SIGN IN"
+msgstr "ВОЙТИ"
+
+#: templates/base.html:64
+msgid "REGISTER"
+msgstr "РЕГИСТРАЦИЯ"
 
 #: templates/index.html:5
 msgid "Home"
@@ -34,9 +138,9 @@ msgid ""
 "majority have suffered alteration in some form, by injected humour, or "
 "randomised words which don't look even slightly believable"
 msgstr ""
-"Существует множество вариантов отрывков из Lorem Ipsum, но большинство "
-"из них претерпели изменения в той или иной форме, с помощью введенного юмора или "
-"случайных слов, которые даже немного не кажутся правдоподобными"
+"Существует множество вариантов отрывков из Lorem Ipsum, но большинство из "
+"них претерпели изменения в той или иной форме, с помощью введенного юмора "
+"или случайных слов, которые даже немного не кажутся правдоподобными"
 
 #: templates/index.html:38 templates/index.html:51 templates/index.html:64
 msgid "Shop Now"
@@ -1251,4 +1355,8 @@ msgstr ""
 
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:249
 msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/modeltranslation/widgets.py:24
+msgid "None"
 msgstr ""

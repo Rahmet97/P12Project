@@ -91,9 +91,3 @@ class ProductDetail(View):
     def get(self, request, pk):
         product = Product.objects.get(pk=pk)
         return render(request, 'product-detail.html', {'product': product})
-
-
-def set_language(request):
-    language_code = request.POST.get('language_code')
-    translation.activate(language_code)
-    return redirect('/')
